@@ -1,0 +1,477 @@
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f8f8f8;
+}
+
+/* Header */
+header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo h2 {
+  font-size: 24px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.search-bar input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-bar {
+  position: relative;
+  display: inline-block;
+}
+
+#search-input {
+  padding-right: 40px; /* Adjust padding to leave space for the icon */
+  width: 100%; /* Full width of the container */
+}
+
+#search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray; /* Icon color */
+  cursor: pointer; /* Makes the icon clickable */
+}
+
+.time {
+  font-size: 18px;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(200, 200, 200, 0.9)
+  );
+  padding: 40px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.hero-text h1 {
+  font-size: 50px;
+  color: #333;
+  padding-left: 20px;
+  gap: 200px;
+}
+
+.hero-image img {
+  max-width: 400px;
+}
+
+.text {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.scroll-btn {
+  background-color: #8f8e8e;
+  color: #000000;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Scrollable Categories */
+.categories-container {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scroll */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  white-space: nowrap; /* Prevent wrapping of items */
+  border-radius: 15px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  scrollbar-width: none; /* For Firefox */
+}
+
+.categories-container::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
+.categories {
+  display: flex;
+  gap: 15px;
+  width: max-content;
+}
+
+.category-item {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: #0f0d0d;
+}
+
+.category-item:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+
+/* Mobile Devices */
+@media screen and (max-width: 768px) {
+  /* Header adjustments */
+  header {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .header-content {
+    flex-direction: column;
+  }
+
+  .logo h2 {
+    font-size: 18px;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .time {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .hero-text {
+    flex: 1;
+    text-align: left;
+    padding-left: 5px; /* Decrease padding on the left */
+  }
+
+  .hero-text h1 {
+    font-size: 15px;
+  }
+
+  .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .hero-image img {
+    max-width: 190px;
+    height: auto;
+  }
+
+  /* Categories section */
+  .category-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .categories {
+    width: 100%;
+  }
+
+  .category-btn {
+    padding: 8px 12px;
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  .scroll-btn {
+    display: none; /* Hide scroll buttons for mobile */
+  }
+  .text {
+    font-size: 12px;
+  }
+}
+
+/* Cards Section */
+.dish-card {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 1000px;
+  padding: 10px;
+  height: 160px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.dish-info {
+  width: 60%;
+  margin: auto;
+}
+
+.dish-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.dish-info p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.dish-image-container {
+  width: 35%;
+  position: relative;
+}
+
+.dish-image-container img {
+  width: 50%;
+  height: 100%;
+  border-radius: 10px;
+  margin-left: 150px;
+}
+
+.add-button {
+  position: absolute;
+  top: 105px;
+  left: 70%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  color: #04c001;
+  border: 0.5px solid #04c001;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Mobile Responsive CSS */
+@media (max-width: 768px) {
+  .dish-card {
+    width: 90%; /* Make it take up most of the screen width */
+    padding: 20px;
+  }
+
+  .dish-info {
+    width: 100%; /* Full width for text content */
+    margin-bottom: 20px; /* Add spacing between text and image */
+  }
+
+  .dish-info h2 {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+
+  .dish-info p {
+    font-size: 14px; /* Adjust font size for paragraph */
+  }
+
+  .price {
+    font-size: 18px; /* Adjust price font size */
+  }
+
+  .dish-image-container {
+    width: 100%; /* Full width for image container */
+    text-align: center; /* Center the image */
+  }
+
+  .dish-image-container img {
+    width: 70%; /* Reduce image size */
+    height: 80%; /* Maintain aspect ratio */
+    margin-left: 0; /* Center the image */
+  }
+
+  .add-button {
+    position: static; /* No need for absolute positioning on mobile */
+    width: 35%; /* Full width for the button */
+    height: 25%;
+    transform: none; /* Remove the transform */
+    text-align: center;
+    padding: 8px 0; /* Adjust padding for a larger clickable area */
+  }
+}
+
+.load-more-btn {
+  padding: 10px 20px;
+  display: flex;
+  margin-left: 570px;
+  margin-top: 10px;
+  color: #000000;
+  border: 0.5 solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+.fa-solid{
+  padding-left: 5px;
+  font-size: 20px;
+  color: #000000;
+}
+
+@media only screen and (max-width: 768px) {
+  .load-more-btn {
+    margin-left: 120px; /* Center align */
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Default styles */
+.about-software {
+  margin: auto;
+  height: 40%;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 15px;
+  line-height: 2;
+  display: flex;
+  flex-direction: row;
+}
+
+.about-software img {
+  width: 400px;
+  height: 300px;
+}
+
+.about-software p::first-line {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .about-software {
+    flex-direction: column;
+    height: auto; /* Adjust height to auto */
+    width: 90%; /* Make it wider on smaller screens */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .about-software img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Keep aspect ratio */
+  }
+
+  .about-software p::first-line {
+    font-size: 18px; /* Adjust font size for better readability */
+  }
+}
+
+/* Desktop and larger screens */
+footer {
+  padding: 50px;
+  padding-left: 200px;
+  margin-top: 20px;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+.hotel-info,
+.software-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-decoration: none;
+}
+
+.hotel-info a,
+.software-info a {
+  text-decoration: none;
+  color: #000083;
+}
+.both-image img {
+  margin: 50px;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  footer {
+    padding: 20px;
+    padding-left: 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .hotel-info h4 {
+    text-align: center;
+  }
+
+  .hotel-info a {
+    text-align: center;
+  }
+
+  .software-info h4 {
+    text-align: center;
+  }
+  .software-info a {
+    text-align: center;
+  }
+
+  .both-image img {
+    margin: 20px;
+    max-width: 80%;
+    height: auto;
+  }
+}

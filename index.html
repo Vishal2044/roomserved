@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Ordering Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <h2>Hotel Logo</h2>
+        </div>
+        <div class="search-bar">
+          <input
+            type="text"
+            placeholder="Search For Dishes or Categories"
+            id="search-input"
+            onkeypress="handleKeyPress(event)"
+          />
+          <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+        </div>
+        <div class="time">
+          <p>Time: 7:00PM - 11:00AM</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>
+          Order Food <br />
+          At Your Bad
+        </h1>
+      </div>
+      <div class="hero-image">
+        <img src="./assets/hero-img.png" alt="Food Image" />
+      </div>
+    </section>
+    <div class="text">
+      <h2>What's on Your Mind?</h2>
+      <div class="arrows">
+        <button class="scroll-btn left-arrow" onclick="scrolLeft()">
+          &#8592;
+        </button>
+        <button class="scroll-btn right-arrow" onclick="scrollRight()">
+          &#8594;
+        </button>
+      </div>
+    </div>
+    <!-- Scrollable Categories -->
+    <section class="categories-container">
+      <div class="categories">
+        <a href="#" class="category-item">All</a>
+        <a href="#breakfast" class="category-item">Breakfast</a>
+        <a href="#south-indian-breakfast" class="category-item"
+          >South Indian Breakfast</a
+        >
+        <a href="#" class="category-item">Cold Drink</a>
+        <a href="#" class="category-item">Soups</a>
+        <a href="#" class="category-item">Salad/Papad</a>
+        <a href="#" class="category-item">Raita/Chaat</a>
+        <a href="#" class="category-item">Non-Veg Starters</a>
+        <a href="#" class="category-item">Chinese Veg Starters</a>
+        <a href="#" class="category-item">Non-Veg Main Course</a>
+        <a href="#" class="category-item">Chinese Veg Main Course</a>
+        <a href="#" class="category-item">Chinese Non-Veg Main Course</a>
+        <a href="#" class="category-item">Noodles/Chinese Rice</a>
+        <a href="#" class="category-item">Veg Main Course</a>
+        <a href="#" class="category-item">Indian Dal</a>
+        <a href="#" class="category-item">Indian Rice</a>
+        <a href="#" class="category-item">Roti, Naan & Paratha</a>
+        <a href="#" class="category-item">Dessert</a>
+        <a href="#" class="category-item">Sandwich</a>
+        <a href="#" class="category-item">Cold Beverage</a>
+        <a href="#" class="category-item">Hot Beverage</a>
+        <a href="#" class="category-item">Veg Starters</a>
+        <a href="#" class="category-item">Indian Non-Veg Rice</a>
+        <a href="#" class="category-item">Barr</a>
+      </div>
+    </section>
+
+    <!-- Dish Cards Section -->
+    <section class="dishes-container">
+      <div id="dish-list">
+        <!-- Dish Cards -->
+        <div class="dish-card">
+          <div class="dish-info">
+            <h2>Stuffed Paneer Paratha</h2>
+            <p>Served With Plain Curd And Pickle</p>
+            <p class="price">₹180</p>
+          </div>
+          <div class="dish-image-container">
+            <img
+              src="https://i.pinimg.com/564x/22/38/64/2238640b5910686e1c13736b773fc1a8.jpg"
+              alt="Dish Image"
+            />
+            <button class="add-button">Add</button>
+          </div>
+        </div>
+
+        <div class="dish-card">
+          <div class="dish-info">
+            <h2>Masala Dosa</h2>
+            <p>Served With Sambar And Chutney</p>
+            <p class="price">₹120</p>
+          </div>
+          <div class="dish-image-container">
+            <img
+              src="https://i.pinimg.com/564x/50/d4/0d/50d40da4a4d1342d62c3bb988ec1ef48.jpg"
+              alt="Dish Image"
+            />
+            <button class="add-button">Add</button>
+          </div>
+        </div>
+
+        <div class="dish-card">
+          <div class="dish-info">
+            <h2>Paneer Butter Masala</h2>
+            <p>Served With Butter Naan</p>
+            <p class="price">₹250</p>
+          </div>
+          <div class="dish-image-container">
+            <img
+              src="https://i.pinimg.com/564x/31/9b/9a/319b9a4e3e4d303c9b5167697745e7de.jpg"
+              alt="Dish Image"
+            />
+            <button class="add-button">Add</button>
+          </div>
+        </div>
+      </div>      
+      <button id="load-more" class="load-more-btn">
+        Load More Dishes <i class="fa-solid fa-angle-down"></i>
+      </button>      
+    </section>
+
+    <div class="about-software">
+      <p>
+        Effortless room service, delivering convenience and comfort to every
+        guest <br />
+        Hotel room delivery software streamlines the ordering process by
+        allowing guests to request room service directly from their devices. It
+        integrates with hotel systems to track orders, manage inventory, and
+        ensure timely deliveries. The software often includes customizable
+        menus, real-time updates, and payment options for a seamless guest
+        experience. It also helps hotels improve efficiency, reduce human error,
+        and enhance customer satisfaction. Analytics and feedback features
+        enable hotels to optimize their services based on guest preferences.
+      </p>
+      <img src="./assets/hero-img.png" alt="" />
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="hotel-info">
+          <h4>Hotel Name</h4>
+          <a href="">+91 9999999999</a>
+          <a href="">hotel@gmail.com</a>
+          <a href="">Location</a>
+        </div>
+        <div class="both-image">
+          <img src="" alt="Hotel Image" />
+          <img src="" alt="Software Image" />
+        </div>
+        <div class="software-info">
+          <h4>Software Name</h4>
+          <a href="">+91 9999999999</a>
+          <a href="">hotel@gmail.com</a>
+          <a href="">Location</a>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

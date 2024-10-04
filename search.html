@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h2>Hotel Logo</h2>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search For Dishes or Categories" id="search-input" disabled />
+                <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+            </div>
+            <div class="time">
+                <p>Time: 7:00PM - 11:00AM</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-results">
+            <h2>Search Results for: <span id="search-query"></span></h2>
+            <div id="results-container" class="results-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hotel Ordering. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('query');
+
+        // Display the search query in the header
+        document.getElementById('search-query').innerText = query;
+
+        // Mock data for dishes
+        const dishes = [
+            { name: "Stuffed Paneer Paratha", description: "Served With Plain Curd And Pickle" },
+            { name: "Stuffed Mixed Paratha", description: "Served With Plain Curd And Pickle" },
+            { name: "Caesar Salad", description: "Fresh romaine lettuce with Caesar dressing and croutons." }
+            // Add more dishes as needed
+        ];
+
+        const resultsContainer = document.getElementById('results-container');
+        const filteredDishes = dishes.filter(dish =>
+            dish.name.toLowerCase().includes(query.toLowerCase()) ||
+            dish.description.toLowerCase().includes(query.toLowerCase())
+        );
+
+        if (filteredDishes.length > 0) {
+            filteredDishes.forEach(dish => {
+                const dishElement = document.createElement('div');
+                dishElement.classList.add('card');
+                dishElement.innerHTML = `<h3 class="dish-name">${dish.name}</h3><p class="dish-description">${dish.description}</p>`;
+                resultsContainer.appendChild(dishElement);
+            });
+        } else {
+            resultsContainer.innerHTML = `<p>No results found for "${query}".</p>`;
+        }
+    </script>
+</body>
+</html>
